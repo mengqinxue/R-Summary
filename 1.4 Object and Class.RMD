@@ -1,0 +1,35 @@
+---
+title: "1.4 Object and Class"
+output: html_notebook
+---
+
+All variables in R are objects and all objects have a class. 
+
+
+# Add attributes
+```{r}
+a <- c(1:5)
+attr(a, "name") <- "Numeric Vector"
+print(a)
+```
+
+
+# Unclass
+```{r}
+unclass(a)
+```
+
+
+# Methods of a class
+```{r}
+methods(class="data.frame")
+```
+
+
+# Methods of a generic function
+Generic funciton plot can be considered as an interface and different classes have different implementations. 
+```{r}
+mode(plot)
+methods(plot)
+```
+

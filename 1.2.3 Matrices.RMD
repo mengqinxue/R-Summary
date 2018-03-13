@@ -1,0 +1,66 @@
+---
+title: "1.2.3 Matrices"
+output: html_notebook
+---
+
+
+# Define Matrix - 1
+```{r}
+m1 <- matrix(1:20, 5, 4)
+m2 <- matrix(1:20, 4, 5)
+```
+
+
+# Multiple Matrices
+```{r}
+m3 <- m1 %*% m2
+print(m3)
+```
+
+
+# Diagonal
+```{r}
+diag(m3)
+```
+
+
+# Use diag to create a matrix via a vector
+```{r}
+m4 <- diag(c(1:5))
+print(m4)
+```
+
+
+# Create identity matrix
+```{r}
+diag(7)
+```
+
+
+# Inverse matirx
+```{r}
+solve(m4)
+```
+
+```{r}
+m4^{-1}
+```
+
+
+# Eigenvalues and eigenvectors
+```{r}
+eigen(m4)
+```
+
+
+# Singular value decomposition (SVD)
+```{r}
+svd(m1)
+```
+
+
+# Determinants
+```{r}
+prod(svd(m1)$d)
+```
+

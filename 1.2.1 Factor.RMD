@@ -1,0 +1,36 @@
+---
+title: "R Notebook"
+output: 1.2.1 Factor
+---
+
+
+# Define a factor
+```{r}
+C1 <- c("tas", "sa",  "qld", "nsw", "nsw", "nt",  "wa",  "wa",
+        "qld", "vic", "nsw", "vic", "qld", "qld", "sa",  "tas",
+        "sa",  "nt",  "wa",  "vic", "qld", "nsw", "nsw", "wa",
+        "sa",  "act", "nsw", "vic", "vic", "act")
+print(mode(C1))
+```
+
+
+# Convert a character vector to factor 
+```{r}
+F1 <- as.factor(C1)
+print(F1)
+mode(F1)
+
+```
+
+
+# Get the levels of a factor
+```{r}
+levels(F1)
+```
+
+
+# Order factor levels
+```{r}
+ordered(F1)
+```
+

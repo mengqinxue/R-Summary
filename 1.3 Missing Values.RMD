@@ -1,0 +1,55 @@
+---
+title: "1.3 Missing Values"
+output: html_notebook
+---
+
+# Define variables with missing values (NA: Not Available)
+```{r}
+x <- c(1:3, NA, 7:15, NA)
+print(x)
+```
+
+# Identify missing values
+```{r}
+is.na(x)
+```
+
+# Remove missing values
+```{r}
+a <- x[!is.na(x)]
+print(a)
+```
+
+# Identify index of missing values
+```{r}
+print(which(is.na(x)))
+```
+
+# NaN: Not a Number
+```{r}
+b <- 0/0
+print(b)
+```
+
+# Idenfity NaN
+```{r}
+print(is.na(b))
+```
+
+# Inf 
+```{r}
+c <- c(1:3, exp(10000000000))
+print(c)
+print(is.na(c))
+```
+
+# Identify Inf
+```{r}
+c[c == Inf]
+```
+
+# Identify Inf
+```{r}
+which(c == Inf)
+```
+

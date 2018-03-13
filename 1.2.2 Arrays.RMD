@@ -1,0 +1,29 @@
+---
+title: "1.2.2 Arrays"
+output: html_notebook
+---
+
+
+# Define Array - 1
+```{r}
+a1 <- c(1:30)
+dim(a1) <- c(3, 5, 2)
+print(a1)
+```
+
+
+# Define Array - 2
+```{r}
+a2 <- array(1:20, dim = c(4, 5))
+print(a2)
+```
+
+
+# The outer product of two arrays
+```{r}
+a3 <- a1 %o% a2
+a3 <- outer(a1, a2, "*") 
+print(a3)
+```
+
+

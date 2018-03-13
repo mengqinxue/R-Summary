@@ -1,0 +1,11 @@
+---
+title: "5.1 File Operations"
+output: html_notebook
+---
+
+# File Reading
+```{r}
+
+```
+
+

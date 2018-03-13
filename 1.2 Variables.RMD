@@ -1,0 +1,41 @@
+---
+title: "1.2 Variables"
+output: html_notebook
+---
+
+Vectors must have their values all of the same mode but can have NA values while lists are recursive and can have different modes of values. 
+
+Atomic variables: numeric, character, logical, complex, raw
+
+# Numeric vectors
+```{r}
+N1 <- numeric()
+N1[3] <- 11
+print(N1)
+
+N2 <- c(2 * 1:5)
+print(N2)
+```
+
+
+# Character vectors
+```{r}
+C1 <- paste("X", c(1:10), sep = "")
+print(C1)
+```
+
+
+# Logical vectors
+```{r}
+x  <- 15
+L1 <- c(x > 13 & x < 22, x > 100)
+print(L1)
+```
+
+
+# Mode (object type) and Length (vector length)
+```{r}
+mode(C1)
+length(C1)
+```
+

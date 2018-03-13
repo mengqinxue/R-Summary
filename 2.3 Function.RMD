@@ -1,0 +1,61 @@
+---
+title: "2.3 Function"
+output: html_notebook
+---
+
+
+# Simple Function
+```{r}
+tf1 <- function(x, y){
+  return(x + y)
+}
+print(tf1(2, 3))
+```
+
+
+# Define a new binary operator
+```{r}
+"%!%" <- function(x, y){
+  return(tf1(x, y))
+}
+print(2 %!% 3)
+```
+
+
+# The "..." argument
+<li> This allows one function to pass on argument settings to another; </li>
+<li> This allows one function to receive any number of arguments;  </li>
+```{r}
+tf2 <- function(name, ...){
+  a <- list(...)
+  print(a)
+}
+tf2(1, 2, 3, 4, 5)
+```
+
+# Global and local variable
+```{r}
+a <- 10
+print(a)
+tf3 <- function() { 
+  a = 1
+  print(a) 
+}
+tf3()
+print(a)
+```
+
+
+# Super assignment 
+Super-assignment Change global variable in local function via using "<<-" or the function assign().
+```{r}
+a <- 10
+print(a)
+tf4 <- function() { 
+  a <<- 1
+  print(a) 
+}
+tf4()
+print(a)
+```
+

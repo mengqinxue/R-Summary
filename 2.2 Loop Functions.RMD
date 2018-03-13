@@ -1,0 +1,36 @@
+---
+title: "2.2 Loop Functions"
+output: html_notebook
+---
+Loop functions in R are not very efficient.
+
+
+# For loop
+```{r}
+for (i in 1:5){
+  print(i)
+}
+```
+
+
+# Repeat loop
+```{r}
+i = 1
+repeat{
+  print(i)
+  i = i + 1
+  if (i == 3) next
+  if (i == 5) break
+} 
+```
+
+
+# While loop
+```{r}
+i = 1
+while (i < 3) {
+  print(i)
+  i = i + 1
+}
+```
+

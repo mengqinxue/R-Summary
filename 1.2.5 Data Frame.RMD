@@ -1,0 +1,36 @@
+---
+title: "1.2.5 Data Frame"
+output: html_notebook
+---
+
+A data frame is a restrict list with class "data.frame".
+  <li>Compoents (each list) must be vectors;</li>
+  <li>Each vector have the same length;</li>
+  
+# Define a Data Frame
+```{r}
+d1 <- as.data.frame(diag(3))
+colnames(d1) <- c("NSW", "ACT", "TAS")
+print(d1)
+```
+
+
+# attach
+```{r}
+attach(d1)
+a <- ACT + TAS + NSW
+print(d1)
+```
+
+
+# detach
+```{r}
+detach(d1)
+```
+
+
+# use search to return searching path
+```{r}
+search()
+```
+

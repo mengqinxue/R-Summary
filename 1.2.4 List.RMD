@@ -1,0 +1,36 @@
+---
+title: "1.2.4 List"
+output: html_notebook
+---
+List is a recursive structure and can store different types of objects. 
+
+# Define a List
+```{r}
+l1 <- list(name="Fred", wife="Mary", no.children=3, child.ages=c(4,7,9))
+print(l1)
+```
+
+
+# List Retrieve
+[[...]] is to select a single element <br>
+[...] is to select a list
+
+```{r}
+print(l1[[4]][2])
+print(l1[1])
+```
+
+
+# Concatenating lists
+```{r}
+l1$property = c("NSW", "ACT", "MEL")
+print(l1)
+```
+
+
+# Remove lists
+```{r}
+l1[[5]] <- NULL
+print(l1)
+```
+

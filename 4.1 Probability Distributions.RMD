@@ -1,0 +1,89 @@
+---
+title: "4.1 Probability Distributions"
+output: html_notebook
+---
+
+# Common used distributions
+```{r echo=FALSE, results='asis'}
+library("knitr")
+df <- data.frame(Distribution = c("beta", "binomial", "Cauchy", "..."), 
+                 RName = c("beta", "binom", "cauchy", "..."),
+                 Parameters = c("shape1, shape2, ncp", "	size, prob", 
+                                "	location, scale", "..."))
+kable(df, caption = "Probability Distributions")
+```
+
+
+```{r echo=FALSE, results='asis'}
+library("knitr")
+df <- data.frame(Function = c("d", "p", "q", "r"), 
+                 Description = c("density", "CDF", "quantile", "random"))
+kable(df, caption = "Distribution Functions")
+```
+
+# 2-tailed p-value for t distribution
+```{r}
+2 * pt(-2.43, df = 13)
+```
+
+
+# Example: using distributions to fit numeric data
+```{r}
+attach(faithful)
+summary(eruptions)
+```
+
+```{r}
+hist(eruptions, seq(1.6, 5.2, 0.2), prob=TRUE)
+lines(density(eruptions, bw=0.1))
+rug(eruptions)
+```
+
+```{r}
+plot(ecdf(eruptions), do.points=FALSE, verticals=TRUE)
+```
+
+```{r}
+long <- eruptions[eruptions > 3]
+plot(ecdf(long), do.points=FALSE, verticals=TRUE)
+x <- seq(3, 5.4, 0.01)
+lines(x, pnorm(x, mean=mean(long), sd=sqrt(var(long))), lty=3)
+```
+
+# Quantile-quantile (Q-Q) plots
+```{r}
+par(pty="s")       
+qqnorm(long); qqline(long)
+```
+
+
+# Two sample tests
+```{r}
+S1 <-c(79.98, 80.04, 80.02, 80.04, 80.03, 80.03, 80.04, 79.97, 
+       80.05, 80.03, 80.02, 80.00, 80.02)
+S2 <-c(80.02, 79.94, 79.98, 79.97, 79.97, 80.03, 79.95, 79.97)
+boxplot(S1, S2)
+```
+
+```{r}
+t.test(S1, S2)  # compare the mean of two normal distributions
+```
+
+```{r}
+var.test(S1, S2)      # F test compare the variance of two normal distribution
+```
+
+
+```{r}
+wilcox.test(S1, S2)     # no need for normal distributions
+```
+
+```{r}
+plot(ecdf(S1), do.points=FALSE, verticals=TRUE, xlim=range(S1, S2))
+plot(ecdf(S2), do.points=FALSE, verticals=TRUE, add=TRUE)
+```
+
+```{r}
+qqplot(S1, S2)
+```
+

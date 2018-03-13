@@ -1,0 +1,27 @@
+---
+title: "3.1 tapply"
+output: html_notebook
+---
+
+
+# define a numeric vector
+```{r}
+a <- c(1:100, 201:300, 401:500)
+b <- rep(c("Group_1", "Group_2", "Group_3"), each = 100)
+print(length(a))
+print(length(b))
+```
+
+
+# tapply is similar to group by
+```{r}
+print(tapply(a, b, mean))
+```
+
+
+# customised tapply function
+```{r}
+std_error <- function(x) sqrt(var(x) / length(x))
+print(tapply(a, b, std_error))
+```
+

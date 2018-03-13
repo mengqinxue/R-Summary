@@ -1,0 +1,25 @@
+---
+title: "1.1 Data Permanency and Removing Objects"
+output: html_notebook
+---
+
+# Define variables
+```{r}
+a = 11
+b = "Hello World !!!"
+```
+
+# Display variables in workplace
+```{r}
+objects()
+```
+
+# Remove variables
+```{r}
+rm(a)
+```
+
+# Display variables in workplace
+```{r}
+ls()
+```
